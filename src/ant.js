@@ -29,9 +29,9 @@ class Ant {
     };
 
     move(color) {
-        turnDirection = this.states[color];
+        const turnDirection = this.states[color];
         this.#rotate(turnDirection);
-        cardinalDirection = this.cardinalDirections[this.directionIndex];
+        const cardinalDirection = this.cardinalDirections[this.directionIndex];
 
         const [rowChange, colChange] = this.positionDeltaMap[cardinalDirection];
         this.row += rowChange;
