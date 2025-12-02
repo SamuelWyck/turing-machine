@@ -1,9 +1,12 @@
 class Ant {
-    constructor(row, col, states, colorSwapMap, boardWidth, boardHeight) {
+    constructor(row, col, id, states, colorSwapMap, boardWidth, boardHeight) {
         this.startRow = row;
         this.startCol = col;
         this.row = row;
         this.col = col;
+
+        this.id = id
+
         this.boardWidth = boardWidth;
         this.boardHeight = boardHeight;
 
