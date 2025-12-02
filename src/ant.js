@@ -1,5 +1,5 @@
 class Ant {
-    constructor(row, col, states, boardWidth, boardHeight) {
+    constructor(row, col, states, colorSwapMap, boardWidth, boardHeight) {
         this.startRow = row;
         this.startCol = col;
         this.row = row;
@@ -8,6 +8,7 @@ class Ant {
         this.boardHeight = boardHeight;
 
         this.states = states;
+        this.colorSwapMap = colorSwapMap;
 
         this.positionDeltaMap = {"west": [0, -1], "north": [-1, 0], "east": [0, 1], "south": [1, 0]};
         this.cardinalDirections = ["west", "north", "east", "south"];
@@ -46,6 +47,9 @@ class Ant {
         } else if (this. col >= this.boardWidth) {
             this.col = this.boardWidth - 2;
         }
+
+        const newColor = this.colorSwapMap[color]
+        return newColor;
     };
 
     reset() {
