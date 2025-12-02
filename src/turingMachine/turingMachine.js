@@ -26,10 +26,10 @@ class TuringMachine {
     createAnts(antsInfo) {
         this.antsInfo = antsInfo;
         this.ants = [];
-        for (let antInfo of antsInfo) {
-            const [antStates, colorSwapMap] = antInfo;
+        for (let i = 0; i < antsInfo.length; i += 1) {
+            const [antStates, colorSwapMap] = antsInfo[i];
             const [row, col] = this.#getRandomCoords();
-            const ant = new Ant(row, col, antStates, colorSwapMap, this.width, this.height);
+            const ant = new Ant(row, col, i, antStates, colorSwapMap, this.width, this.height);
             this.ants.push(ant);
         }
     };
