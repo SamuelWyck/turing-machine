@@ -1,4 +1,4 @@
-const TuringMachine = require("./turing-machine.js");
+const TuringMachine = require("./turingMachine/turingMachine.js");
 
 
 
