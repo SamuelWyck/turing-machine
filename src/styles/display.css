@@ -1,0 +1,39 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(100, 12px);
+    width: max-content;
+    overflow: auto;
+    max-height: 100vh;
+    scrollbar-width: thin;
+}
+
+.cell {
+    width: 12px;
+    height: 12px;
+}
+
+.cell.W {
+    background-color: white;
+}
+
+.cell.B {
+    background-color: black;
+}
+
+.cell.R {
+    background-color: blue;
+}
+
+.cell.G {
+    background-color: green;
+}
+
+.cell .ant {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.ant.hidden {
+    visibility: hidden;
+}
