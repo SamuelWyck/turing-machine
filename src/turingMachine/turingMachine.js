@@ -7,17 +7,25 @@ class TuringMachine {
     constructor(antsInfo, width, height) {
         this.width = width;
         this.height = height;
-        this.whiteSymbol = "W";
+        this.leftSymbol = "W";
+        this.turnAroundSymbol = "R";
         this.board = this.#generateBoard();
         this.createAnts(antsInfo);
     };
 
     #generateBoard() {
         const board = [];
+        let count = -1;
         for (let i = 0; i < this.height; i += 1) {
+            count += 1;
             const row = [];
             for (let j = 0; j < this.width; j += 1) {
-                row.push(this.whiteSymbol);
+                let symbol = this.leftSymbol;
+                if (count % 2 == 0) {
+                    symbol = this.turnAroundSymbol;
+                }
+                row.push(symbol);
+                count += 1;
             }
             board.push(row);
         }
