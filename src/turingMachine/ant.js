@@ -1,3 +1,7 @@
+const randInt = require("../utils/randInt.js");
+
+
+
 class Ant {
     constructor(row, col, id, states, colorSwapMap, boardWidth, boardHeight) {
         this.startRow = row;
@@ -15,7 +19,7 @@ class Ant {
 
         this.positionDeltaMap = {"west": [0, -1], "north": [-1, 0], "east": [0, 1], "south": [1, 0]};
         this.cardinalDirections = ["west", "north", "east", "south"];
-        this.directionIndex = 1;
+        this.directionIndex = randInt(0, this.cardinalDirections.length);
     };
 
     #rotate(turn) {
