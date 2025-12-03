@@ -1,4 +1,4 @@
-require("../styles/display.css");
+require("./styles/display.css");
 const createElement = require("./utils/createElement.js");
 
 
