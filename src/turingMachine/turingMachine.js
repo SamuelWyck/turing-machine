@@ -1,4 +1,5 @@
 const Ant = require("./ant.js");
+const randInt = require("../utils/randInt.js");
 
 
 
@@ -35,25 +36,22 @@ class TuringMachine {
     };
 
     #getRandomCoords() {
-        const row = this.#randInt(0, this.height);
-        const col = this.#randInt(0, this.width);
+        const row = randInt(0, this.height);
+        const col = randInt(0, this.width);
         return [row, col];
     };
 
-    #randInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min) + min);
-    };
-
     update() {
+        const updatedAnts = [];
         for (let ant of this.ants) {
             const oldRow = ant.row;
             const oldCol = ant.col;
             const color = this.board[ant.row][ant.col];
             const newColor = ant.move(color);
             this.board[oldRow][oldCol] = newColor;
+            updatedAnts.push([ant, newColor]);
         };
+        return updatedAnts;
     };
 };
 
