@@ -5,7 +5,8 @@ const BoardDisplay = require("./boardDisplay.js");
 
 
 const antsInfo = [
-    [{"W": "left", "B": "right", "R": "straight", "G": "turn around"}, {"G": "R", "B": "W", "R": "G", "W": "B"}]
+    [{"W": "left", "B": "right", "R": "straight", "G": "turn around"}, {"G": "R", "B": "W", "R": "G", "W": "B"}],
+    [{"W": "left", "B": "right", "R": "straight", "G": "turn around"}, {"G": "B", "B": "R", "R": "W", "W": "G"}]
 ];
 
 
