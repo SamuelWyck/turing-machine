@@ -4,6 +4,19 @@ const randInt = require("../utils/randInt.js");
 
 
 class TuringMachine {
+    static twoStateAnt = [
+        {"W": "left", "B": "right", "R": "left", "G": "right"}, 
+        {"G": "W", "B": "W", "R": "B", "W": "B"}
+    ];
+    static fourStateAnt1 = [
+        {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+        {"G": "R", "B": "W", "R": "G", "W": "B"}
+    ];
+    static fourStateAnt2 = [
+        {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+        {"G": "B", "B": "R", "R": "W", "W": "G"}
+    ];
+
     constructor(antsInfo, width, height) {
         this.width = width;
         this.height = height;
