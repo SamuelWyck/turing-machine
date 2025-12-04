@@ -13,14 +13,30 @@ div#root {
     min-height: 100vh;
 }
 
-/* .turing-machine {
-    width: 100%;
-    height: 100vh;
-} */
+.turing-machine {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
 
 .board-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: aqua;
+}
+
+.options {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.options button {
+    width: clamp(25px, 15px + 1vw, 30px);
+    display: flex;
+    background: none;
+    border: none;
 }
