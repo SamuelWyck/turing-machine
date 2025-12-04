@@ -43,16 +43,16 @@ class Ant {
         const [rowChange, colChange] = this.positionDeltaMap[cardinalDirection];
         this.row += rowChange;
         if (this.row < 0) {
-            this.row = 1;
+            this.row = this.boardHeight - 1;
         } else if (this.row >= this.boardHeight) {
-            this.row = this.boardHeight - 2;
+            this.row = 0;
         }
 
         this.col += colChange;
         if (this.col < 0) {
-            this.col = 1;
+            this.col = this.boardWidth - 1;
         } else if (this. col >= this.boardWidth) {
-            this.col = this.boardWidth - 2;
+            this.col = 0;
         }
 
         const newColor = this.colorSwapMap[color]
