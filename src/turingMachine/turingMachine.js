@@ -6,14 +6,17 @@ const randInt = require("../utils/randInt.js");
 class TuringMachine {
     static twoStateAnt = [
         {"W": "left", "B": "right", "R": "left", "G": "right"}, 
+        {"G": "R", "B": "W", "R": "G", "W": "B"},
         {"G": "W", "B": "W", "R": "B", "W": "B"}
     ];
     static fourStateAnt1 = [
         {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+        {"G": "R", "B": "W", "R": "G", "W": "B"},
         {"G": "R", "B": "W", "R": "G", "W": "B"}
     ];
     static fourStateAnt2 = [
         {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+        {"G": "B", "B": "R", "R": "W", "W": "G"},
         {"G": "B", "B": "R", "R": "W", "W": "G"}
     ];
 
@@ -49,9 +52,9 @@ class TuringMachine {
         this.antsInfo = antsInfo;
         this.ants = [];
         for (let i = 0; i < antsInfo.length; i += 1) {
-            const [antStates, colorSwapMap] = antsInfo[i];
+            const [antStates, colorSwapMap, displayColorSwapMap] = antsInfo[i];
             const [row, col] = this.#getRandomCoords();
-            const ant = new Ant(row, col, i, antStates, colorSwapMap, this.width, this.height);
+            const ant = new Ant(row, col, i, antStates, colorSwapMap, displayColorSwapMap, this.width, this.height);
             this.ants.push(ant);
         }
     };
@@ -68,9 +71,9 @@ class TuringMachine {
             const oldRow = ant.row;
             const oldCol = ant.col;
             const color = this.board[ant.row][ant.col];
-            const newColor = ant.move(color);
+            const [newColor, displayColor] = ant.move(color);
             this.board[oldRow][oldCol] = newColor;
-            updatedAnts.push([ant, newColor]);
+            updatedAnts.push([ant, displayColor]);
         };
         return updatedAnts;
     };
