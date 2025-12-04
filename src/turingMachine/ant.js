@@ -3,7 +3,7 @@ const randInt = require("../utils/randInt.js");
 
 
 class Ant {
-    constructor(row, col, id, states, colorSwapMap, boardWidth, boardHeight) {
+    constructor(row, col, id, states, colorSwapMap, displayColorSwapMap, boardWidth, boardHeight) {
         this.startRow = row;
         this.startCol = col;
         this.row = row;
@@ -16,6 +16,7 @@ class Ant {
 
         this.states = states;
         this.colorSwapMap = colorSwapMap;
+        this.displayColorSwapMap = displayColorSwapMap;
 
         this.positionDeltaMap = {"west": [0, -1], "north": [-1, 0], "east": [0, 1], "south": [1, 0]};
         this.cardinalDirections = ["west", "north", "east", "south"];
@@ -55,8 +56,9 @@ class Ant {
             this.col = 0;
         }
 
-        const newColor = this.colorSwapMap[color]
-        return newColor;
+        const newColor = this.colorSwapMap[color];
+        const displayColor = this.displayColorSwapMap[color];
+        return [newColor, displayColor];
     };
 
     reset() {
