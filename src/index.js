@@ -5,9 +5,9 @@ const BoardDisplay = require("./boardDisplay.js");
 
 const antsInfo = [
     TuringMachine.fourStateAnt1, 
-    TuringMachine.fourStateAnt1, 
-    TuringMachine.fourStateAnt1, 
-    TuringMachine.twoStateAnt
+    TuringMachine.fourStateAnt2, 
+    TuringMachine.twoStateAnt1,
+    TuringMachine.twoStateAnt2
 ];
 
         
@@ -19,6 +19,6 @@ display.setAntPositions(machine.ants);
 function test() {
     const updatedAnts = machine.update();
     display.updateAnts(updatedAnts);
-    setTimeout(test, 100);
+    setTimeout(test, 0);
 };
 test();
