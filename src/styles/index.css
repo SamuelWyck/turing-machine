@@ -55,6 +55,11 @@ html {
     --p9-b-color: #0C0950;
     --p9-r-color: #261FB3;
     --p9-g-color: #161179;
+    --p10-ant-color: #FF0000;
+    --p10-w-color: #FFEB00;
+    --p10-b-color: #000957;
+    --p10-r-color: #344CB7;
+    --p10-g-color: #577BC1;
     --blue-light-filter: 
     brightness(0) 
     saturate(100%) 
