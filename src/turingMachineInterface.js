@@ -8,6 +8,14 @@ class TuringMachineInterFace {
             TuringMachine.fourStateAnt1, 
             TuringMachine.fourStateAnt2, 
             TuringMachine.twoStateAnt1,
+            TuringMachine.twoStateAnt2,
+            TuringMachine.fourStateAnt1, 
+            TuringMachine.fourStateAnt2, 
+            TuringMachine.twoStateAnt1,
+            TuringMachine.twoStateAnt2,
+            TuringMachine.fourStateAnt1, 
+            TuringMachine.fourStateAnt2, 
+            TuringMachine.twoStateAnt1,
             TuringMachine.twoStateAnt2
         ];
         const boardSize = 100;
@@ -21,7 +29,7 @@ class TuringMachineInterFace {
         this.speedIndex = 0;
 
         this.paletteIndex = 0;
-        this.paletteClasses = ["paletteOne", "paletteTwo"];
+        this.paletteClasses = ["paletteOne", "paletteTwo", "paletteThree"];
 
         this.machineLoop = this.machineLoop.bind(this);
         this.optionsBtnCallback = this.optionsBtnCallback.bind(this);
