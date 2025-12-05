@@ -25,6 +25,15 @@
     scrollbar-color: var(--p2-b-color)  var(--p2-w-color);
 }
 
+.board.paletteThree {
+    --ant-color: var(--p3-ant-color);
+    --w-color: var(--p3-w-color);
+    --b-color: var(--p3-b-color);
+    --r-color: var(--p3-r-color);
+    --g-color: var(--p3-g-color);
+    scrollbar-color: var(--p2-3-color)  var(--p2-3-color);
+}
+
 .cell {
     width: 12px;
     height: 12px;
