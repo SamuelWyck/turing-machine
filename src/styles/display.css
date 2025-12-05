@@ -31,7 +31,7 @@
     --b-color: var(--p3-b-color);
     --r-color: var(--p3-r-color);
     --g-color: var(--p3-g-color);
-    scrollbar-color: var(--p2-3-color)  var(--p2-3-color);
+    scrollbar-color: var(--p3-b-color)  var(--p3-w-color);
 }
 
 .board.paletteFour {
@@ -40,7 +40,16 @@
     --b-color: var(--p4-b-color);
     --r-color: var(--p4-r-color);
     --g-color: var(--p4-g-color);
-    scrollbar-color: var(--p2-4-color)  var(--p2-4-color);
+    scrollbar-color: var(--p4-b-color)  var(--p4-w-color);
+}
+
+.board.paletteFive {
+    --ant-color: var(--p5-ant-color);
+    --w-color: var(--p5-w-color);
+    --b-color: var(--p5-b-color);
+    --r-color: var(--p5-r-color);
+    --g-color: var(--p5-g-color);
+    scrollbar-color: var(--p5-b-color)  var(--p5-w-color);
 }
 
 .cell {
