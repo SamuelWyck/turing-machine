@@ -20,6 +20,11 @@ html {
     --p2-b-color: #2D4F2B;
     --p2-r-color: #708A58;
     --p2-g-color: #FFB823;
+    --p3-ant-color: #FFB823;
+    --p3-w-color: #000000;
+    --p3-b-color: #F15412;
+    --p3-r-color: #EEEEEE;
+    --p3-g-color: #34B3F1;
     --blue-light-filter: 
     brightness(0) 
     saturate(100%) 
