@@ -13,6 +13,7 @@
     --b-color: var(--p1-b-color);
     --r-color: var(--p1-r-color);
     --g-color: var(--p1-g-color);
+    scrollbar-color: var(--p1-b-color)  var(--p1-w-color);
 }
 
 .cell {
