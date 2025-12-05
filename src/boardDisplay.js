@@ -10,7 +10,7 @@ class BoardDisplay {
         this.straightSymbol = "G";
         this.turnAroundSymbol = "R";
 
-        this.board = createElement("div", null, "board", "default");
+        this.board = createElement("div", null, "board", "paletteOne");
         const boardContainer = document.querySelector("div.board-wrapper");
         boardContainer.appendChild(this.board);
 
