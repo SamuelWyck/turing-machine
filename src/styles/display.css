@@ -115,6 +115,15 @@
     scrollbar-color: var(--p12-b-color)  var(--p12-w-color);
 }
 
+.board.palette13 {
+    --ant-color: var(--p13-ant-color);
+    --w-color: var(--p13-w-color);
+    --b-color: var(--p13-b-color);
+    --r-color: var(--p13-r-color);
+    --g-color: var(--p13-g-color);
+    scrollbar-color: var(--p13-b-color)  var(--p13-w-color);
+}
+
 .cell {
     width: 12px;
     height: 12px;
