@@ -29,7 +29,7 @@ class TuringMachineInterFace {
         this.speedIndex = 0;
 
         this.paletteIndex = 0;
-        this.paletteClasses = ["paletteOne", "paletteTwo", "paletteThree"];
+        this.paletteClasses = ["paletteOne", "paletteTwo", "paletteThree", "paletteFour"];
 
         this.machineLoop = this.machineLoop.bind(this);
         this.optionsBtnCallback = this.optionsBtnCallback.bind(this);
