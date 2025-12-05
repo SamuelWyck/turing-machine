@@ -15,6 +15,11 @@ html {
     --p1-b-color: #2E3840;
     --p1-r-color: #708A58;
     --p1-g-color: #4E6E81;
+    --p2-ant-color: #ff0000;
+    --p2-w-color: #FFF1CA;
+    --p2-b-color: #2D4F2B;
+    --p2-r-color: #708A58;
+    --p2-g-color: #FFB823;
     --blue-light-filter: 
     brightness(0) 
     saturate(100%) 
