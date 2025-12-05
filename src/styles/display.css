@@ -79,6 +79,15 @@
     scrollbar-color: var(--p8-b-color)  var(--p8-w-color);
 }
 
+.board.paletteNine {
+    --ant-color: var(--p9-ant-color);
+    --w-color: var(--p9-w-color);
+    --b-color: var(--p9-b-color);
+    --r-color: var(--p9-r-color);
+    --g-color: var(--p9-g-color);
+    scrollbar-color: var(--p9-b-color)  var(--p9-w-color);
+}
+
 .cell {
     width: 12px;
     height: 12px;
