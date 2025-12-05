@@ -6,6 +6,28 @@
 
 html {
     font-size: 16px;
+    --light-metallic: #AFB0B3;
+    --dark-metallic: #838487;
+    --blue-light-color: #26F7FD;
+    --orange-light-color: #FDAA48;
+    --blue-light-filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(83%) 
+    sepia(40%) 
+    saturate(1886%) 
+    hue-rotate(140deg) 
+    brightness(103%) 
+    contrast(98%);
+    --orange-light-filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(78%) 
+    sepia(16%) 
+    saturate(2227%) 
+    hue-rotate(329deg) 
+    brightness(102%) 
+    contrast(98%);
 }
 
 div#root {
@@ -23,7 +45,7 @@ div#root {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: tan;
 }
 
 .options {
@@ -35,8 +57,72 @@ div#root {
 }
 
 .options button {
-    width: clamp(25px, 15px + 1vw, 30px);
     display: flex;
-    background: none;
+    align-items: center;
+    background-image: linear-gradient(var(--light-metallic), 70%, var(--dark-metallic) 120%);
     border: none;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 10px;
+    --filter: var(--blue-light-filter);
+    --font-color: var(--blue-light-color);
+    box-shadow: 0px 4px 10px -1px black;
+    transition: transform .1s linear;
+}
+
+.options button img {
+    /* width: clamp(20px, 15px + 1vw, 25px); */
+    width: 25px;
+    filter: var(--filter);
+    transform: var(--transform);
+}
+
+.options button:hover {
+    --filter: var(--orange-light-filter);
+    transform: scale(1.1);
+    --font-color: var(--orange-light-color);
+}
+
+button.settings:hover img {
+    animation-name: rotate;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.options button:active {
+    box-shadow: 0px 4px 10px -1px inset black;
+}
+
+.speed::before {
+    display: inline-block;
+    margin-right: .2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--font-color);
+}
+
+.speed.stop::before {
+    content: "0x";
+}
+
+.speed.one::before {
+    content: "1x";
+}
+
+.speed.two::before {
+    content: "2x";
+}
+
+.speed.five::before {
+    content: "5x";
+}
+
+.speed.max::before {
+    content: "500x";
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(30deg);}
 }
