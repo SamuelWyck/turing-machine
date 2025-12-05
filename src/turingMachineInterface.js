@@ -20,6 +20,9 @@ class TuringMachineInterFace {
         this.speedBtnClassMap = {500: "one", 250: "two", 100: "five", 0: "max", 1: "stop"};
         this.speedIndex = 0;
 
+        this.paletteIndex = 0;
+        this.paletteClasses = ["paletteOne", "paletteTwo"];
+
         this.machineLoop = this.machineLoop.bind(this);
         this.optionsBtnCallback = this.optionsBtnCallback.bind(this);
         this.initializeButtons();
@@ -59,7 +62,10 @@ class TuringMachineInterFace {
             btn.classList.add(btnClass);
 
         } else if (btn.matches(".palette")) {
-
+            this.display.board.classList.remove(...this.paletteClasses);
+            this.paletteIndex = (this.paletteIndex + 1 === this.paletteClasses.length) ? 0 : this.paletteIndex + 1;
+            const boardClass = this.paletteClasses[this.paletteIndex];
+            this.display.board.classList.add(boardClass);
         } else if (btn.matches(".settings")) {
 
         }
