@@ -18,12 +18,15 @@ class BoardDisplay {
     };
 
     #fillBoard(cellsWide, cellsHigh) {
+        this.cells = [];
         for (let row = 0; row < cellsHigh; row += 1) {
+            const cellRow = [];
             for (let col = 0 ; col < cellsWide; col += 1) {
                 const cell = this.#createCell(row, col);
                 this.board.appendChild(cell);
-
+                cellRow.push(cell);
             }
+            this.cells.push(cellRow);
         }
     };
 
@@ -39,7 +42,7 @@ class BoardDisplay {
     setAntPositions(ants) {
         this.antsMap = {};
         for (let ant of ants) {
-            const cell = this.#getCell(ant.row, ant.col);
+            const cell = this.cells[ant.row][ant.col];
             const antElement = cell.firstChild;
             antElement.classList.remove("hidden");
             this.antsMap[ant.id] = cell;
@@ -56,16 +59,11 @@ class BoardDisplay {
             const oldAntEle = oldCell.firstChild;
             oldAntEle.classList.add("hidden");
             
-            const newCell = this.#getCell(ant.row, ant.col);
+            const newCell = this.cells[ant.row][ant.col];
             const newAntEle = newCell.firstChild;
             newAntEle.classList.remove("hidden");
             this.antsMap[ant.id] = newCell;
         }
-    };
-
-    #getCell(row, col) {
-        const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
-        return cell;
     };
 };
 
