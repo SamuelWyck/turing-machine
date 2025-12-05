@@ -7,13 +7,22 @@
     scrollbar-width: thin;
 }
 
-.board.default {
+.board.paletteOne {
     --ant-color: var(--p1-ant-color);
     --w-color: var(--p1-w-color);
     --b-color: var(--p1-b-color);
     --r-color: var(--p1-r-color);
     --g-color: var(--p1-g-color);
     scrollbar-color: var(--p1-b-color)  var(--p1-w-color);
+}
+
+.board.paletteTwo {
+    --ant-color: var(--p2-ant-color);
+    --w-color: var(--p2-w-color);
+    --b-color: var(--p2-b-color);
+    --r-color: var(--p2-r-color);
+    --g-color: var(--p2-g-color);
+    scrollbar-color: var(--p2-b-color)  var(--p2-w-color);
 }
 
 .cell {
