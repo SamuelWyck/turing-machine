@@ -45,6 +45,11 @@ html {
     --p7-b-color: #400082;
     --p7-r-color: #7E0CF5;
     --p7-g-color: #CD4DCC;
+    --p8-ant-color: #FF0000;
+    --p8-w-color: #000000;
+    --p8-b-color: #169976;
+    --p8-r-color: #222222;
+    --p8-g-color: #1DCD9F;
     --blue-light-filter: 
     brightness(0) 
     saturate(100%) 
