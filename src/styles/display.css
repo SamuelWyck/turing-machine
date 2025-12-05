@@ -14,18 +14,22 @@
 
 .cell.W {
     background-color: white;
+    background-color: #F9DBBB;
 }
 
 .cell.B {
     background-color: black;
+    background-color: #2E3840;
 }
 
 .cell.R {
     background-color: blue;
+    background-color: #708A58;
 }
 
 .cell.G {
     background-color: green;
+    background-color: #4E6E81;
 }
 
 .cell .ant {
