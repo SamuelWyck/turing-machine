@@ -7,35 +7,39 @@
     scrollbar-width: thin;
 }
 
+.board.default {
+    --ant-color: var(--p1-ant-color);
+    --w-color: var(--p1-w-color);
+    --b-color: var(--p1-b-color);
+    --r-color: var(--p1-r-color);
+    --g-color: var(--p1-g-color);
+}
+
 .cell {
     width: 12px;
     height: 12px;
 }
 
 .cell.W {
-    background-color: white;
-    background-color: #F9DBBB;
+    background-color: var(--w-color);
 }
 
 .cell.B {
-    background-color: black;
-    background-color: #2E3840;
+    background-color: var(--b-color);
 }
 
 .cell.R {
-    background-color: blue;
-    background-color: #708A58;
+    background-color: var(--r-color);
 }
 
 .cell.G {
-    background-color: green;
-    background-color: #4E6E81;
+    background-color: var(--g-color);
 }
 
 .cell .ant {
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: var(--ant-color);
 }
 
 .ant.hidden {
