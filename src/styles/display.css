@@ -34,6 +34,15 @@
     scrollbar-color: var(--p2-3-color)  var(--p2-3-color);
 }
 
+.board.paletteFour {
+    --ant-color: var(--p4-ant-color);
+    --w-color: var(--p4-w-color);
+    --b-color: var(--p4-b-color);
+    --r-color: var(--p4-r-color);
+    --g-color: var(--p4-g-color);
+    scrollbar-color: var(--p2-4-color)  var(--p2-4-color);
+}
+
 .cell {
     width: 12px;
     height: 12px;
