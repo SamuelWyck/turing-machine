@@ -35,7 +35,8 @@ class TuringMachineInterFace {
             "paletteThree", 
             "paletteFour", 
             "paletteFive", 
-            "paletteSix"
+            "paletteSix",
+            "paletteSeven"
         ];
 
         this.machineLoop = this.machineLoop.bind(this);
