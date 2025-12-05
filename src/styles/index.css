@@ -35,6 +35,11 @@ html {
     --p5-b-color: #FF0000;
     --p5-r-color: #3D0000;
     --p5-g-color: #950101;
+    --p6-ant-color: #008000;
+    --p6-w-color: #000000;
+    --p6-b-color: #FFAC41;
+    --p6-r-color: #FF1E56;
+    --p6-g-color: #323232;
     --blue-light-filter: 
     brightness(0) 
     saturate(100%) 
