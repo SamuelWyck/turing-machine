@@ -129,6 +129,7 @@ div#root {
     justify-content: center;
     align-items: center;
     background-color: tan;
+    background-image: linear-gradient(#d2b48c, 50%, #c89f76);
 }
 
 .options {
