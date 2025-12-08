@@ -4,7 +4,7 @@ const createElement = require("./utils/createElement.js");
 
 
 class BoardDisplay {
-    constructor(cellsWide, cellsHigh) {
+    constructor(cellsWide, cellsHigh, ants) {
         this.leftSymbol = "W";
         this.rightSymbol = "B";
         this.straightSymbol = "G";
@@ -15,6 +15,7 @@ class BoardDisplay {
         boardContainer.appendChild(this.board);
 
         this.#fillBoard(cellsWide, cellsHigh);
+        this.#setAntPositions(ants);
     };
 
     #fillBoard(cellsWide, cellsHigh) {
@@ -39,7 +40,7 @@ class BoardDisplay {
         return cell;
     };
 
-    setAntPositions(ants) {
+    #setAntPositions(ants) {
         this.antsMap = {};
         for (let ant of ants) {
             const cell = this.cells[ant.row][ant.col];
@@ -64,6 +65,23 @@ class BoardDisplay {
             newAntEle.classList.remove("hidden");
             this.antsMap[ant.id] = newCell;
         }
+    };
+
+    resetBoard() {
+        for (let row = 0; row < this.cells.length; row += 1) {
+            for (let col = 0; col < this.cells[row].length; col += 1) {
+                const cell = this.cells[row][col];
+                cell.classList.remove(this.rightSymbol, this.straightSymbol, this.turnAroundSymbol);
+                cell.classList.add(this.leftSymbol);
+                const antEle = cell.firstChild;
+                antEle.classList.add("hidden");
+            }
+        }
+    };
+
+    setAnts(ants) {
+        this.resetBoard();
+        this.#setAntPositions(ants);
     };
 };
 
