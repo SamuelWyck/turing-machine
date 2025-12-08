@@ -4,26 +4,32 @@ const randInt = require("../utils/randInt.js");
 
 
 class TuringMachine {
-    static twoStateAnt1 = [
-        {"W": "left", "B": "right", "R": "left", "G": "right"}, 
-        {"G": "R", "B": "W", "R": "G", "W": "B"},
-        {"G": "W", "B": "W", "R": "B", "W": "B"}
-    ];
-    static twoStateAnt2 = [
-        {"W": "left", "B": "right", "R": "left", "G": "right"}, 
-        {"G": "R", "B": "W", "R": "G", "W": "B"},
-        {"G": "R", "B": "R", "R": "G", "W": "G"}
-    ];
-    static fourStateAnt1 = [
-        {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
-        {"G": "R", "B": "W", "R": "G", "W": "B"},
-        {"G": "R", "B": "W", "R": "G", "W": "B"}
-    ];
-    static fourStateAnt2 = [
-        {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
-        {"G": "B", "B": "R", "R": "W", "W": "G"},
-        {"G": "B", "B": "R", "R": "W", "W": "G"}
-    ];
+    static twoStateAnt1 = 0;
+    static twoStateAnt2 = 1;
+    static fourStateAnt1 = 2;
+    static fourStateAnt2 = 3;
+    static antStateMap = {
+        0: [
+            {"W": "left", "B": "right", "R": "left", "G": "right"}, 
+            {"G": "R", "B": "W", "R": "G", "W": "B"},
+            {"G": "W", "B": "W", "R": "B", "W": "B"}
+        ],
+        1: [
+            {"W": "left", "B": "right", "R": "left", "G": "right"}, 
+            {"G": "R", "B": "W", "R": "G", "W": "B"},
+            {"G": "R", "B": "R", "R": "G", "W": "G"}
+        ],
+        2: [
+            {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+            {"G": "R", "B": "W", "R": "G", "W": "B"},
+            {"G": "R", "B": "W", "R": "G", "W": "B"}
+        ],
+        3: [
+            {"W": "left", "B": "right", "R": "straight", "G": "turn around"}, 
+            {"G": "B", "B": "R", "R": "W", "W": "G"},
+            {"G": "B", "B": "R", "R": "W", "W": "G"}
+        ]
+    };
 
     constructor(antsInfo, width, height) {
         this.width = width;
@@ -31,7 +37,7 @@ class TuringMachine {
         this.leftSymbol = "W";
         this.turnAroundSymbol = "R";
         this.board = this.#generateBoard();
-        this.createAnts(antsInfo);
+        this.#createAnts(antsInfo);
     };
 
     #generateBoard() {
@@ -53,13 +59,13 @@ class TuringMachine {
         return board;
     };
 
-    createAnts(antsInfo) {
-        this.antsInfo = antsInfo;
+    #createAnts(antsInfo) {
         this.ants = [];
-        for (let i = 0; i < antsInfo.length; i += 1) {
-            const [antStates, colorSwapMap, displayColorSwapMap] = antsInfo[i];
+        for (let antInfo of antsInfo) {
+            const [antId, antType] = antInfo;
+            const [antStates, colorSwapMap, displayColorSwapMap] = TuringMachine.antStateMap[antType];
             const [row, col] = this.#getRandomCoords();
-            const ant = new Ant(row, col, i, antStates, colorSwapMap, displayColorSwapMap, this.width, this.height);
+            const ant = new Ant(row, col, antId, antStates, colorSwapMap, displayColorSwapMap, this.width, this.height);
             this.ants.push(ant);
         }
     };
@@ -81,6 +87,11 @@ class TuringMachine {
             updatedAnts.push([ant, displayColor]);
         };
         return updatedAnts;
+    };
+
+    setAnts(antsInfo) {
+        this.board = this.#generateBoard();
+        this.#createAnts(antsInfo);
     };
 };
 
