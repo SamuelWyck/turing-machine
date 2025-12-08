@@ -5,6 +5,7 @@
     overflow: auto;
     max-height: 100vh;
     scrollbar-width: thin;
+    box-shadow: 0px 0px 10px 0px black;
 }
 
 .board.paletteOne {
